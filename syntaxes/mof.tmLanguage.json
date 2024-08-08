@@ -1,0 +1,86 @@
+{
+    "scopeName": "source.mof",
+    "name": "MOF",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#pragmas"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#predefined_classes"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.mof",
+                    "match": "//.*$"
+                },
+                {
+                    "name": "comment.block.mof",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        },
+        "pragmas": {
+            "patterns": [
+                {
+                    "name": "keyword.control.pragma.mof",
+                    "match": "#PRAGMA\\s+\\w+"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.mof",
+                    "match": "\\b(class|instance|of|as|true|false)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.mof",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.mof",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.mof",
+                    "match": "\\b\\d+\\b"
+                }
+            ]
+        },
+        "predefined_classes": {
+            "patterns": [
+                {
+                    "name": "support.class.predefined.mof",
+                    "match": "\\b(__EventFilter|__FilterToConsumerBinding|__Namespace|__ClassProviderRegistration|__Provider|__SystemSecurity)\\b"
+                }
+            ]
+        }
+    }
+}

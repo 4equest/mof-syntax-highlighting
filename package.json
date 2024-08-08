@@ -1,0 +1,55 @@
+{
+    "name": "mof-syntax-highlighting",
+    "displayName": "MOF Syntax Highlighting",
+    "description": "Provides syntax highlighting and IntelliSense for MOF files used in Windows WMI.",
+    "version": "1.0.0",
+    "publisher": "4equest",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:mof"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "mof",
+                "aliases": [
+                    "MOF",
+                    "mof"
+                ],
+                "extensions": [
+                    ".mof"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "mof",
+                "scopeName": "source.mof",
+                "path": "./syntaxes/mof.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "mof",
+                "path": "./src/data/snippets.json"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ."
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.31",
+        "@types/vscode": "^1.60.0",
+        "typescript": "^4.3.5",
+        "@vscode/test-electron": "^1.6.0"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "MOF Class Definition": {
+        "prefix": "class",
+        "body": [
+            "class ${1:ClassName}",
+            "{",
+            "\t$0",
+            "};"
+        ],
+        "description": "MOF Class Definition"
+    },
+    "MOF Instance Definition": {
+        "prefix": "instance",
+        "body": [
+            "instance of ${1:ClassName}",
+            "{",
+            "\t$0",
+            "};"
+        ],
+        "description": "MOF Instance Definition"
+    }
+}
